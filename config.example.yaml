@@ -1,0 +1,26 @@
+# Each "site" block fully describes one competitor store.
+# Adding a competitor = adding a block here. No code changes.
+delay_seconds: 1.5
+
+sites:
+  - name: Books to Scrape          # public scraping sandbox, safe for demos
+    currency: GBP
+    urls:
+      - https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html
+      - https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html
+    selectors:
+      name: ".product_main h1"
+      price: ".product_main .price_color"
+      availability: ".product_main .availability"
+    out_of_stock_markers: ["out of stock"]
+
+  # - name: Competitor B
+  #   currency: USD
+  #   urls:
+  #     - https://example-store.com/products/widget-pro
+  #   selectors:
+  #     name: "h1.product-title"
+  #     price: "span.price--sale, span.price"
+  #     availability: ".stock-status"
+  #   headers:               # optional per-site header overrides
+  #     Referer: https://example-store.com/
